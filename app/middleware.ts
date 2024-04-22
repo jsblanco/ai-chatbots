@@ -4,13 +4,13 @@ import { NextResponse } from 'next/server';
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)']);
 
 export default clerkMiddleware((auth, request) => {
-  if (isProtectedRoute(request)) {
-    auth().protect();
-  }
+	if (isProtectedRoute(request)) {
+		auth().protect();
+	}
 
-  return NextResponse.next();
+	return NextResponse.next();
 });
 
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next)._)', '/', '/(api|trpc)(._)'],
+	matcher: ['/((?!.+\\.[\\w]+$|_next)._)', '/', '/(api|trpc)(._)'],
 };
