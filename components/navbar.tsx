@@ -6,6 +6,7 @@ import { FunctionComponent } from 'react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from './theme-toggle'
+import MobileSidebar from './mobile-sidebar'
 
 interface NavbarProps {}
 const font = Poppins({
@@ -15,15 +16,11 @@ const font = Poppins({
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
-    <header className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary">
+    <header className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
       <div className="flex-center">
-        <Menu className="block md:hidden"></Menu>
+        <MobileSidebar />
         <Link href="/">
-          <h1
-            className={cn(
-              'hidden md:block text-xl md:tex-3xl font-bold text-primary',
-              font.className
-            )}>
+          <h1 className={cn('hidden md:block text-xl md:tex-3xl font-bold text-primary', font.className)}>
             AI Chatbots
           </h1>
         </Link>
