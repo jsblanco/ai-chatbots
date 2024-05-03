@@ -11,6 +11,7 @@ async function main() {
 				{ name: 'Politics' },
 			],
 		});
+		
 	} catch (error) {
 		console.error('Error seeding default categories.', error);
 	} finally {
